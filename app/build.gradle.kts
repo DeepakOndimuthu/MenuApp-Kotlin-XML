@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.ksp)
+    alias (libs.plugins.dagger.hilt)
 }
 
 android {
@@ -42,4 +44,24 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    /* ---------- HILT ---------- */
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    /* ---------- RETROFIT ---------- */
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    /* ---------- IMAGE (GLIDE) ---------- */
+    implementation(libs.glide)
+    ksp(libs.ksp)
+    /* ---------- RECYCLER VIEW ---------- */
+    implementation(libs.androidx.recyclerview)
+    /* ---------- LIFECYCLE / MVVM ---------- */
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    /* ---------- COROUTINES ---------- */
+    implementation(libs.kotlinx.coroutines.android)
+    /* ---------- NAVIGATION (XML) ---------- */
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 }
